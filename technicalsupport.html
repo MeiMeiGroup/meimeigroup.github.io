@@ -1,1 +1,365 @@
-xxx
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagons App - 技术支持</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --text-color: #e0e0e0;
+            --primary-color: #0a84ff;
+            --secondary-text-color: #8e8e93;
+            --border-color: #3a3a3c;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .lang-switcher button {
+            background: var(--card-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .lang-switcher button.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        section {
+            margin-top: 40px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .card {
+            background-color: var(--card-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #f5f5f7;
+        }
+        code {
+            background-color: #2c2c2e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SF Mono", "Menlo", "Monaco", monospace;
+            font-size: 0.9em;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #f5f5f7;
+        }
+        .faq-item p {
+            margin: 0;
+            color: var(--secondary-text-color);
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text-color);
+            font-size: 0.9em;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .highlight {
+            color: #ff9f0a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Hexagons</h1>
+            <div class="lang-switcher">
+                <button id="lang-zh" class="active">中文</button>
+                <button id="lang-en">English</button>
+            </div>
+        </header>
+
+        <section class="card">
+            <h2 data-lang-key="intro_title">简介</h2>
+            <p data-lang-key="intro_p1">Hexagons 是一款强大而优雅的视频浏览与播放工具，旨在成为您通往所有媒体资源的统一入口。无论您的视频存储在何处——网络服务器、NAS、或是 IPTV 播放列表——Hexagons 都能提供流畅、一致的访问体验。</p>
+            <p data-lang-key="intro_p2">通过与豆瓣 (Douban) 和 TMDB 的深度集成（Pro 功能），Hexagons 能自动为您喜爱的影视内容补全海报、评分、演员阵容和背景图，将您的媒体库从简单的文件列表变为一个赏心悦目的影视海报墙。</p>
+        </section>
+
+        <section>
+            <h2 data-lang-key="guide_title">使用指南</h2>
+            <div class="card">
+                <h3 data-lang-key="guide_webapi_title">1. 添加 WebApi 数据源</h3>
+                <p data-lang-key="guide_webapi_p1">这是最常见的数据源类型，通常用于对接采用苹果CMS、海洋CMS等系统的在线资源站。</p>
+                <ul>
+                    <li data-lang-key="guide_webapi_li1"><strong>类型</strong>：选择 <code>WebApi</code>。</li>
+                    <li data-lang-key="guide_webapi_li2"><strong>名称</strong>：为您的数据源起一个容易识别的名字（例如：极速资源）。</li>
+                    <li data-lang-key="guide_webapi_li3"><strong>API地址</strong>：填入提供商给您的API链接，通常以 <code>/api.php/provide/vod/</code> 结尾。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-lang-key="guide_webdav_title">2. 添加 WebDAV 数据源</h3>
+                <p data-lang-key="guide_webdav_p1">如果您的视频文件存储在支持 WebDAV 协议的网盘或 NAS 上（如群晖、威联通、坚果云等），请使用此类型。</p>
+                <ul>
+                    <li data-lang-key="guide_webdav_li1"><strong>类型</strong>：选择 <code>WebDAV</code>。</li>
+                    <li data-lang-key="guide_webdav_li2"><strong>名称</strong>：为您自己的服务器命名。</li>
+                    <li data-lang-key="guide_webdav_li3"><strong>服务器地址</strong>：填入您的 WebDAV 服务器域名或 IP 地址（例如 <code>dav.example.com</code>）。</li>
+                    <li data-lang-key="guide_webdav_li4"><strong>端口</strong>：如果使用标准端口（HTTP 80, HTTPS 443），可留空。</li>
+                    <li data-lang-key="guide_webdav_li5"><strong>路径</strong>：您想浏览的根文件夹路径，例如 <code>/videos</code>。留空则从根目录开始。</li>
+                    <li data-lang-key="guide_webdav_li6"><strong>用户名/密码</strong>：您的 WebDAV 登录凭据。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-lang-key="guide_smb_title">3. 添加 SMB 数据源</h3>
+                <p data-lang-key="guide_smb_p1">适用于连接到 Windows 文件共享或配置了 SMB 服务的 NAS 设备。</p>
+                <ul>
+                    <li data-lang-key="guide_smb_li1"><strong>类型</strong>：选择 <code>SMB</code>。</li>
+                    <li data-lang-key="guide_smb_li2"><strong>名称</strong>：为您自己的服务器命名。</li>
+                    <li data-lang-key="guide_smb_li3"><strong>服务器地址</strong>：您的服务器 IP 地址（例如 <code>192.168.1.100</code>）。</li>
+                    <li data-lang-key="guide_smb_li4"><strong>路径 (共享名)</strong>：您要访问的共享文件夹名称（例如 <code>Movies</code>）。<span class="highlight" data-lang-key="guide_smb_highlight">这是必填项。</span></li>
+                    <li data-lang-key="guide_smb_li5"><strong>用户名/密码</strong>：您的 SMB 登录凭据。如果允许匿名访问，可留空。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-lang-key="guide_iptv_title">4. 添加 IPTV 数据源</h3>
+                <p data-lang-key="guide_iptv_p1">用于观看直播电视。您需要一个包含直播源链接的 M3U 文件地址。</p>
+                <ul>
+                    <li data-lang-key="guide_iptv_li1"><strong>类型</strong>：选择 <code>IPTV</code>。</li>
+                    <li data-lang-key="guide_iptv_li2"><strong>名称</strong>：为您的播放列表命名（例如：全球直播）。</li>
+                    <li data-lang-key="guide_iptv_li3"><strong>API地址</strong>：填入 M3U 文件的完整 URL。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-lang-key="guide_batch_title">5. 批量导入 (WebApi)</h3>
+                <p data-lang-key="guide_batch_p1">这是一个非常高效的功能，允许您通过电脑浏览器一次性添加多个 WebApi 数据源。</p>
+                <ol>
+                    <li data-lang-key="guide_batch_ol1">在 App 的“数据源”页面，点击右上角的“+”号，选择“通过网页批量导入”。</li>
+                    <li data-lang-key="guide_batch_ol2">确保您的手机和电脑连接到 <span class="highlight" data-lang-key="guide_batch_highlight">同一个 Wi-Fi 网络</span>。</li>
+                    <li data-lang-key="guide_batch_ol3">在电脑浏览器中访问 App 界面上显示的网址（例如 <code>http://192.168.1.5:8080</code>）。</li>
+                    <li data-lang-key="guide_batch_ol4">在网页的文本框中，按照 <code>名称,API地址</code> 的格式输入数据源，每行一个。例如：</li>
+                </ol>
+                <code>
+                    极速资源,https://jszyapi.com/api.php/provide/vod/<br>
+                    量子资源,https://cj.lziapi.com/api.php/provide/vod/
+                </code>
+                <p data-lang-key="guide_batch_p2" style="margin-top: 10px;">点击“导入”按钮，所有数据源将自动添加到您的 App 中。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 data-lang-key="faq_title">常见问题 (FAQ)</h2>
+            <div class="card">
+                <div class="faq-item">
+                    <strong data-lang-key="faq_q1_title">Q: 为什么我看不到电影海报、评分和推荐？</strong>
+                    <p data-lang-key="faq_q1_p1">A: 这些是 <span class="highlight">Pro</span> 版本的专属功能。Hexagons 需要通过豆瓣和 TMDB 的接口来获取这些丰富的元数据。升级到 Pro 版本即可解锁此功能，以及无限制的搜索次数，让您的观影体验全面升级。</p>
+                </div>
+                <div class="faq-item">
+                    <strong data-lang-key="faq_q2_title">Q: 免费用户每天的搜索次数限制是多少？</strong>
+                    <p data-lang-key="faq_q2_p1">A: 免费用户每天有固定的搜索次数限制（默认3次，具体次数可能根据远程配置调整）。这个限制会在每天零点自动重置。升级到 Pro 版本可以享受无限制的搜索。</p>
+                </div>
+                <div class="faq-item">
+                    <strong data-lang-key="faq_q3_title">Q: 我无法连接到我的 SMB 或 WebDAV 服务器。</strong>
+                    <p data-lang-key="faq_q3_p1">A: 请检查以下几点：<br>
+                    1. 确保您的手机和服务器在同一个局域网内，或者服务器已正确配置公网访问。<br>
+                    2. 仔细核对服务器地址、端口、用户名和密码是否正确。<br>
+                    3. 对于 SMB，请确保“路径”字段填写的是 <span class="highlight">共享文件夹的名称</span>，而不是文件夹内的子路径。<br>
+                    4. 对于 WebDAV，请确保“路径”字段是您希望开始浏览的文件夹路径。</p>
+                </div>
+                 <div class="faq-item">
+                    <strong data-lang-key="faq_q4_title">Q: “通过网页批量导入”功能无法使用。</strong>
+                    <p data-lang-key="faq_q4_p1">A: 请确认您的手机和电脑连接在同一个 Wi-Fi 网络下。如果您的网络环境复杂（例如有多个路由器或启用了客户端隔离），可能会导致设备间无法互相访问。您可以尝试重启路由器或在手机上重新进入导入页面以刷新服务。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p data-lang-key="footer_contact">如果您遇到其他问题或有任何建议，请通过 <a href="mailto:your.email@example.com">your.email@example.com</a> 联系我们。</p>
+            <p>&copy; 2024 Hexagons App. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const translations = {
+            "zh": {
+                "intro_title": "简介",
+                "intro_p1": "Hexagons 是一款强大而优雅的视频浏览与播放工具，旨在成为您通往所有媒体资源的统一入口。无论您的视频存储在何处——网络服务器、NAS、或是 IPTV 播放列表——Hexagons 都能提供流畅、一致的访问体验。",
+                "intro_p2": "通过与豆瓣 (Douban) 和 TMDB 的深度集成（Pro 功能），Hexagons 能自动为您喜爱的影视内容补全海报、评分、演员阵容和背景图，将您的媒体库从简单的文件列表变为一个赏心悦目的影视海报墙。",
+                "guide_title": "使用指南",
+                "guide_webapi_title": "1. 添加 WebApi 数据源",
+                "guide_webapi_p1": "这是最常见的数据源类型，通常用于对接采用苹果CMS、海洋CMS等系统的在线资源站。",
+                "guide_webapi_li1": "<strong>类型</strong>：选择 <code>WebApi</code>。",
+                "guide_webapi_li2": "<strong>名称</strong>：为您的数据源起一个容易识别的名字（例如：极速资源）。",
+                "guide_webapi_li3": "<strong>API地址</strong>：填入提供商给您的API链接，通常以 <code>/api.php/provide/vod/</code> 结尾。",
+                "guide_webdav_title": "2. 添加 WebDAV 数据源",
+                "guide_webdav_p1": "如果您的视频文件存储在支持 WebDAV 协议的网盘或 NAS 上（如群晖、威联通、坚果云等），请使用此类型。",
+                "guide_webdav_li1": "<strong>类型</strong>：选择 <code>WebDAV</code>。",
+                "guide_webdav_li2": "<strong>名称</strong>：为您自己的服务器命名。",
+                "guide_webdav_li3": "<strong>服务器地址</strong>：填入您的 WebDAV 服务器域名或 IP 地址（例如 <code>dav.example.com</code>）。",
+                "guide_webdav_li4": "<strong>端口</strong>：如果使用标准端口（HTTP 80, HTTPS 443），可留空。",
+                "guide_webdav_li5": "<strong>路径</strong>：您想浏览的根文件夹路径，例如 <code>/videos</code>。留空则从根目录开始。",
+                "guide_webdav_li6": "<strong>用户名/密码</strong>：您的 WebDAV 登录凭据。",
+                "guide_smb_title": "3. 添加 SMB 数据源",
+                "guide_smb_p1": "适用于连接到 Windows 文件共享或配置了 SMB 服务的 NAS 设备。",
+                "guide_smb_li1": "<strong>类型</strong>：选择 <code>SMB</code>。",
+                "guide_smb_li2": "<strong>名称</strong>：为您自己的服务器命名。",
+                "guide_smb_li3": "<strong>服务器地址</strong>：您的服务器 IP 地址（例如 <code>192.168.1.100</code>）。",
+                "guide_smb_li4": "<strong>路径 (共享名)</strong>：您要访问的共享文件夹名称（例如 <code>Movies</code>）。<span class=\"highlight\">这是必填项。</span>",
+                "guide_smb_highlight": "这是必填项。",
+                "guide_smb_li5": "<strong>用户名/密码</strong>：您的 SMB 登录凭据。如果允许匿名访问，可留空。",
+                "guide_iptv_title": "4. 添加 IPTV 数据源",
+                "guide_iptv_p1": "用于观看直播电视。您需要一个包含直播源链接的 M3U 文件地址。",
+                "guide_iptv_li1": "<strong>类型</strong>：选择 <code>IPTV</code>。",
+                "guide_iptv_li2": "<strong>名称</strong>：为您的播放列表命名（例如：全球直播）。",
+                "guide_iptv_li3": "<strong>API地址</strong>：填入 M3U 文件的完整 URL。",
+                "guide_batch_title": "5. 批量导入 (WebApi)",
+                "guide_batch_p1": "这是一个非常高效的功能，允许您通过电脑浏览器一次性添加多个 WebApi 数据源。",
+                "guide_batch_ol1": "在 App 的“数据源”页面，点击右上角的“+”号，选择“通过网页批量导入”。",
+                "guide_batch_ol2": "确保您的手机和电脑连接到 <span class=\"highlight\">同一个 Wi-Fi 网络</span>。",
+                "guide_batch_highlight": "同一个 Wi-Fi 网络",
+                "guide_batch_ol3": "在电脑浏览器中访问 App 界面上显示的网址（例如 <code>http://192.168.1.5:8080</code>）。",
+                "guide_batch_ol4": "在网页的文本框中，按照 <code>名称,API地址</code> 的格式输入数据源，每行一个。例如：",
+                "guide_batch_p2": "点击“导入”按钮，所有数据源将自动添加到您的 App 中。",
+                "faq_title": "常见问题 (FAQ)",
+                "faq_q1_title": "Q: 为什么我看不到电影海报、评分和推荐？",
+                "faq_q1_p1": "A: 这些是 <span class=\"highlight\">Pro</span> 版本的专属功能。Hexagons 需要通过豆瓣和 TMDB 的接口来获取这些丰富的元数据。升级到 Pro 版本即可解锁此功能，以及无限制的搜索次数，让您的观影体验全面升级。",
+                "faq_q2_title": "Q: 免费用户每天的搜索次数限制是多少？",
+                "faq_q2_p1": "A: 免费用户每天有固定的搜索次数限制（默认3次，具体次数可能根据远程配置调整）。这个限制会在每天零点自动重置。升级到 Pro 版本可以享受无限制的搜索。",
+                "faq_q3_title": "Q: 我无法连接到我的 SMB 或 WebDAV 服务器。",
+                "faq_q3_p1": "A: 请检查以下几点：<br>1. 确保您的手机和服务器在同一个局域网内，或者服务器已正确配置公网访问。<br>2. 仔细核对服务器地址、端口、用户名和密码是否正确。<br>3. 对于 SMB，请确保“路径”字段填写的是 <span class=\"highlight\">共享文件夹的名称</span>，而不是文件夹内的子路径。<br>4. 对于 WebDAV，请确保“路径”字段是您希望开始浏览的文件夹路径。",
+                "faq_q4_title": "Q: “通过网页批量导入”功能无法使用。",
+                "faq_q4_p1": "A: 请确认您的手机和电脑连接在同一个 Wi-Fi 网络下。如果您的网络环境复杂（例如有多个路由器或启用了客户端隔离），可能会导致设备间无法互相访问。您可以尝试重启路由器或在手机上重新进入导入页面以刷新服务。",
+                "footer_contact": "如果您遇到其他问题或有任何建议，请通过 <a href=\"mailto:your.email@example.com\">your.email@example.com</a> 联系我们。"
+            },
+            "en": {
+                "intro_title": "Introduction",
+                "intro_p1": "Hexagons is a powerful and elegant video browsing and playback tool, designed to be your unified gateway to all your media resources. Whether your videos are stored on a web server, a NAS, or an IPTV playlist, Hexagons provides a smooth and consistent access experience.",
+                "intro_p2": "With deep integration with Douban and TMDB (a Pro feature), Hexagons automatically enriches your favorite movies and TV shows with posters, ratings, cast, and backdrops, transforming your media library from a simple file list into a visually stunning poster wall.",
+                "guide_title": "User Guide",
+                "guide_webapi_title": "1. Add a WebApi Source",
+                "guide_webapi_p1": "This is the most common source type, typically used for connecting to online resource sites based on systems like Apple CMS or Ocean CMS.",
+                "guide_webapi_li1": "<strong>Type</strong>: Select <code>WebApi</code>.",
+                "guide_webapi_li2": "<strong>Name</strong>: Give your source an easily recognizable name (e.g., JS Resources).",
+                "guide_webapi_li3": "<strong>API Address</strong>: Enter the API link provided by your provider, usually ending with <code>/api.php/provide/vod/</code>.",
+                "guide_webdav_title": "2. Add a WebDAV Source",
+                "guide_webdav_p1": "Use this type if your video files are stored on a cloud drive or NAS that supports the WebDAV protocol (e.g., Synology, QNAP, Jottacloud).",
+                "guide_webdav_li1": "<strong>Type</strong>: Select <code>WebDAV</code>.",
+                "guide_webdav_li2": "<strong>Name</strong>: Name your own server.",
+                "guide_webdav_li3": "<strong>Server Address</strong>: Enter your WebDAV server's domain or IP address (e.g., <code>dav.example.com</code>).",
+                "guide_webdav_li4": "<strong>Port</strong>: Can be left blank if using standard ports (HTTP 80, HTTPS 443).",
+                "guide_webdav_li5": "<strong>Path</strong>: The root folder path you want to browse, e.g., <code>/videos</code>. Leave blank to start from the root.",
+                "guide_webdav_li6": "<strong>Username/Password</strong>: Your WebDAV login credentials.",
+                "guide_smb_title": "3. Add an SMB Source",
+                "guide_smb_p1": "Suitable for connecting to Windows file shares or NAS devices with SMB service configured.",
+                "guide_smb_li1": "<strong>Type</strong>: Select <code>SMB</code>.",
+                "guide_smb_li2": "<strong>Name</strong>: Name your own server.",
+                "guide_smb_li3": "<strong>Server Address</strong>: Your server's IP address (e.g., <code>192.168.1.100</code>).",
+                "guide_smb_li4": "<strong>Path (Share Name)</strong>: The name of the shared folder you want to access (e.g., <code>Movies</code>). <span class=\"highlight\">This is a required field.</span>",
+                "guide_smb_highlight": "This is a required field.",
+                "guide_smb_li5": "<strong>Username/Password</strong>: Your SMB login credentials. Can be left blank for anonymous access.",
+                "guide_iptv_title": "4. Add an IPTV Source",
+                "guide_iptv_p1": "Used for watching live TV. You need an M3U file address that contains live stream links.",
+                "guide_iptv_li1": "<strong>Type</strong>: Select <code>IPTV</code>.",
+                "guide_iptv_li2": "<strong>Name</strong>: Name your playlist (e.g., Global Live TV).",
+                "guide_iptv_li3": "<strong>API Address</strong>: Enter the full URL of the M3U file.",
+                "guide_batch_title": "5. Batch Import (WebApi)",
+                "guide_batch_p1": "This is a highly efficient feature that allows you to add multiple WebApi sources at once using your computer's browser.",
+                "guide_batch_ol1": "On the 'Sources' page in the app, tap the '+' icon in the top right and select 'Batch Import via Web'.",
+                "guide_batch_ol2": "Ensure your phone and computer are connected to the <span class=\"highlight\">same Wi-Fi network</span>.",
+                "guide_batch_highlight": "same Wi-Fi network",
+                "guide_batch_ol3": "Open the URL displayed on the app's screen in your computer's browser (e.g., <code>http://192.168.1.5:8080</code>).",
+                "guide_batch_ol4": "In the web page's text box, enter the sources in the format <code>Name,API Address</code>, one per line. For example:",
+                "guide_batch_p2": "Click the 'Import' button, and all sources will be automatically added to your app.",
+                "faq_title": "Frequently Asked Questions (FAQ)",
+                "faq_q1_title": "Q: Why can't I see movie posters, ratings, and recommendations?",
+                "faq_q1_p1": "A: These are exclusive features of the <span class=\"highlight\">Pro</span> version. Hexagons needs to fetch this rich metadata from Douban and TMDB APIs. Upgrading to Pro unlocks these features, as well as unlimited searches, for a fully enhanced viewing experience.",
+                "faq_q2_title": "Q: What is the daily search limit for free users?",
+                "faq_q2_p1": "A: Free users have a fixed number of searches per day (default is 3, but the exact number may be adjusted via remote configuration). This limit resets automatically at midnight. Upgrade to Pro to enjoy unlimited searches.",
+                "faq_q3_title": "Q: I can't connect to my SMB or WebDAV server.",
+                "faq_q3_p1": "A: Please check the following:<br>1. Ensure your phone and server are on the same local network, or that the server is correctly configured for public access.<br>2. Double-check that the server address, port, username, and password are correct.<br>3. For SMB, make sure the 'Path' field is the <span class=\"highlight\">name of the shared folder</span>, not a sub-path within it.<br>4. For WebDAV, ensure the 'Path' field is the folder path where you want to start browsing.",
+                "faq_q4_title": "Q: The 'Batch Import via Web' feature isn't working.",
+                "faq_q4_p1": "A: Please confirm that your phone and computer are on the same Wi-Fi network. If you have a complex network environment (e.g., multiple routers or client isolation enabled), it may prevent devices from communicating with each other. You can try restarting your router or re-entering the import page on your phone to refresh the service.",
+                "footer_contact": "If you encounter other issues or have any suggestions, please contact us at <a href=\"mailto:your.email@example.com\">your.email@example.com</a>."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            
+            document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnZh = document.getElementById('lang-zh');
+            const btnEn = document.getElementById('lang-en');
+
+            btnZh.addEventListener('click', () => setLanguage('zh'));
+            btnEn.addEventListener('click', () => setLanguage('en'));
+
+            const preferredLanguage = localStorage.getItem('preferredLanguage');
+            const browserLanguage = navigator.language.split('-')[0];
+
+            if (preferredLanguage) {
+                setLanguage(preferredLanguage);
+            } else if (browserLanguage === 'zh') {
+                setLanguage('zh');
+            } else {
+                setLanguage('en');
+            }
+        });
+    </script>
+
+</body>
+</html>
