@@ -1,13 +1,254 @@
-量子资源,https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/at/xml/  
-非凡资源,http://api.ffzyapi.com/api.php/provide/vod/from/ffm3u8/at/xml/  
-光速资源,https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/at/xml  
-U酷资源,https://api.ukuapi.com/api.php/provide/vod/from/ukm3u8/at/xml  
-百度资源,https://api.apibdzy.com/api.php/provide/vod/from/dbm3u8/at/xml/  
-暴风资源,https://bfzyapi.com/api.php/provide/vod/at/xml/  
-魔都资源,https://www.moduzy.com/api.php/provide/vod/at/xml/  
-索尼资源网,https://suoniapi.com/api.php/provide/vod/from/snm3u8/at/xml/  
-闪电资源,http://sdzyapi.com/api.php/provide/vod/at/xml/  
-极速资源,https://jszyapi.com/api.php/provide/vod/at/xml/from/jsm3u8  
-火狐资源,https://hhzyapi.com/api.php/provide/vod/at/xml/from/hhm3u8  
-快播资源,https://caiji.kczyapi.com/api.php/provide/vod/at/xml/from/kcm3u8  
-金鹰资源,https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Hexagon - 推荐资源源列表</title>
+    <style>
+        :root {
+            --primary: #007aff;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #1d1d1f;
+            --border: #e5e5e5;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6e6e73;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 1.5rem 1.8rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .card-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0 0 0.8rem 0;
+            color: var(--text);
+        }
+
+        .card-url {
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 0.95rem;
+            color: #007aff;
+            word-break: break-all;
+            margin: 0;
+            background: rgba(0, 122, 255, 0.06);
+            padding: 0.8rem;
+            border-radius: 10px;
+            line-height: 1.4;
+        }
+
+        .copy-btn {
+            margin-top: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: flex-start;
+        }
+
+        .copy-btn:hover {
+            background: #0062cc;
+        }
+
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+
+        .notice {
+            text-align: center;
+            color: #6e6e73;
+            font-size: 0.95rem;
+            margin-top: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>推荐资源源</h1>
+        <p class="subtitle">Sync Hexagon 支持批量导入以下常用源（XML 格式），一键添加即可使用</p>
+
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <h3 class="card-name">量子资源</h3>
+                    <p class="card-url">https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/at/xml/')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">非凡资源</h3>
+                    <p class="card-url">http://api.ffzyapi.com/api.php/provide/vod/from/ffm3u8/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('http://api.ffzyapi.com/api.php/provide/vod/from/ffm3u8/at/xml/')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">光速资源</h3>
+                    <p class="card-url">https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/at/xml</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/at/xml')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">U酷资源</h3>
+                    <p class="card-url">https://api.ukuapi.com/api.php/provide/vod/from/ukm3u8/at/xml</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://api.ukuapi.com/api.php/provide/vod/from/ukm3u8/at/xml')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">百度资源</h3>
+                    <p class="card-url">https://api.apibdzy.com/api.php/provide/vod/from/dbm3u8/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://api.apibdzy.com/api.php/provide/vod/from/dbm3u8/at/xml/')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">暴风资源</h3>
+                    <p class="card-url">https://bfzyapi.com/api.php/provide/vod/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://bfzyapi.com/api.php/provide/vod/at/xml/')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">魔都资源</h3>
+                    <p class="card-url">https://www.moduzy.com/api.php/provide/vod/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://www.moduzy.com/api.php/provide/vod/at/xml/')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">索尼资源网</h3>
+                    <p class="card-url">https://suoniapi.com/api.php/provide/vod/from/snm3u8/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://suoniapi.com/api.php/provide/vod/from/snm3u8/at/xml/')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">闪电资源</h3>
+                    <p class="card-url">http://sdzyapi.com/api.php/provide/vod/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('http://sdzyapi.com/api.php/provide/vod/at/xml/')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">极速资源</h3>
+                    <p class="card-url">https://jszyapi.com/api.php/provide/vod/at/xml/from/jsm3u8</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://jszyapi.com/api.php/provide/vod/at/xml/from/jsm3u8')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">火狐资源</h3>
+                    <p class="card-url">https://hhzyapi.com/api.php/provide/vod/at/xml/from/hhm3u8</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://hhzyapi.com/api.php/provide/vod/at/xml/from/hhm3u8')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">快播资源</h3>
+                    <p class="card-url">https://caiji.kczyapi.com/api.php/provide/vod/at/xml/from/kcm3u8</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://caiji.kczyapi.com/api.php/provide/vod/at/xml/from/kcm3u8')">一键复制</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="card-name">金鹰资源</h3>
+                    <p class="card-url">https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/</p>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/')">一键复制</button>
+            </div>
+        </div>
+
+        <p class="notice">使用方法：在 Sync Hexagon → 数据源管理 → 批量导入 → 粘贴名称,链接 格式（已为你准备好复制）。<br>这些源均为公开接口，仅供学习参考，请合法使用。</p>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('已复制到剪贴板：' + text);
+            }).catch(err => {
+                console.error('复制失败', err);
+                alert('复制失败，请手动复制');
+            });
+        }
+    </script>
+</body>
+</html>
