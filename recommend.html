@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Hexagon - tvOS 专属媒体工具推荐</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #007aff;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        ol, ul {
+            padding-left: 25px;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .link-btn {
+            display: inline-block;
+            background: #007aff;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .link-btn:hover {
+            background: #0062cc;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sync Hexagon</h1>
+        <p class="subtitle">tvOS 专属优雅媒体播放工具</p>
+
+        <p><strong>Sync Hexagon</strong> 是一款专为 Apple TV 设计的媒体播放器，采用独特的六边形界面，操作直观、遥控器友好。支持从 SMB/WebDAV/NAS 导入本地媒体、IPTV (M3U 播放列表)、HLS/M3U8 流媒体等，轻松构建个人媒体库。智能元数据匹配、跨设备进度同步、VOD 搜索、简单源订阅，一应俱全。</p>
+
+        <div class="warning">
+            <strong>重要声明：</strong> 本工具<strong>仅为播放器和解析工具</strong>，不提供、不存储任何影视内容。所有媒体资源需用户自行合法获取和添加，使用时请遵守当地法律法规。
+        </div>
+
+        <h2>如何下载安装（仅限 Apple TV 用户）</h2>
+        <ol>
+            <li>在你的 <strong>Apple TV</strong> 上打开 <strong>App Store</strong>。</li>
+            <li>在搜索框输入：<strong>Sync Hexagon</strong> 或 <strong>Hexagon</strong>（推荐直接搜“Sync Hexagon”）。</li>
+            <li>找到开发者为 <strong>延锐 胡</strong> 的应用，点击 <strong>获取</strong> / <strong>下载</strong> 并安装。</li>
+        </ol>
+
+        <p style="text-align: center;">
+            <a href="https://apps.apple.com/app/id6754623627" class="link-btn" target="_blank">直接打开 App Store 页面 →</a>
+        </p>
+
+        <p><strong>注意：</strong> 如果你在 iPhone、iPad 或 Mac 上看到这个页面，App Store 链接可能会提示“此 App 需要 Apple TV”。请切换到你的 Apple TV 设备上操作，或把此页面链接/截图分享给有 Apple TV 的朋友。</p>
+
+        <h2>新手快速上手 - 导入热门数据源（3 步完成）</h2>
+        <ol>
+            <li>打开 <strong>Sync Hexagon</strong> App，进入顶部导航栏 → <strong>我的</strong>（或设置图标） → 点击 <strong>数据源管理</strong>。</li>
+            <li>点击右上角 <strong>+</strong> 添加按钮 → 选择 <strong>批量导入</strong>（通过网页批量导入）。</li>
+            <li>App 会显示一个本地网址（如 http://192.168.x.x:xxxx/import ），确保你的手机/电脑和 Apple TV 在<strong>同一个 Wi-Fi</strong> 下。用浏览器访问该网址，在文本框里<strong>直接复制粘贴</strong>以下内容（一行一个，格式：名称,链接），然后点击“导入”：</li>
+        </ol>
+
+        <pre>
+极速资源,https://jszyapi.com/api.php/provide/vod/at/xml/from/jsm3u8
+火狐资源,https://hhzyapi.com/api.php/provide/vod/at/xml/from/hhm3u8
+        </pre>
+
+        <p>导入成功后，返回 App，数据源列表中会出现新添加的源，点击即可浏览使用。</p>
+
+        <h3>小提示</h3>
+        <ul>
+            <li>导入后若无法加载，检查网络连接，或重启 App 试试。</li>
+            <li>支持更多格式：WebApi (XML/JSON)、M3U 播放列表等。</li>
+            <li>如遇问题，可通过 App 内反馈或邮件联系开发者。</li>
+        </ul>
+
+        <footer>
+            感谢使用 Sync Hexagon！祝你观影愉快～<br>
+            页面最后更新：2026 年
+        </footer>
+    </div>
+</body>
+</html>
